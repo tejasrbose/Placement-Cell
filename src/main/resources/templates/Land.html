@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<style type="text/css">
+
+  .center-image {
+  width:60%;
+  height:60%;
+  display: block;
+  margin: 0 auto;
+}
+  
+  
+
+</style>
+  <title>T & P</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  
+  <link th:href="@{/images/apple-touch-icon.png}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+  <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+  <link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap}" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/css/aos.css}" rel="stylesheet">
+  <link th:href="@{/css/glightbox.min.css}" rel="stylesheet">
+  <link th:href="@{/css/swiper-bundle.min.css}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link th:href="@{/css/main.css}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Impact
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a th:href="@{mailto:contact@example.com}">tejasrbose@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+919579193172</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a th:href="@{#}" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a th:href="@{#}" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a th:href="@{#}" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a th:href="@{#}" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Easy Place<span>.</span></h1>
+      </a>
+      <a class="logo d-flex align-items-center" href="/"> <!-- Replace "/" with your logo's link if necessary -->
+      <img th:src="@{/images/aissms-ioit-logo.png}" alt="Your Logo" style="width: 500px; height: 500px;">
+      <!-- If you want to include a text logo along with the image, you can add it here -->
+      <!-- <img src="path/to/your-logo.png" alt="Your Logo"><span>Your Text Logo</span> -->
+    </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+           
+          <li><a th:href="@{#hero}">Home</a></li>
+          <li><a th:href="@{#about}">About</a></li>
+          <li><a th:href="@{#services}">Services</a></li>
+           <li><a th:href="@{/mainpage}">Login</a></li>
+          <li><a th:href="@{#team}">Team</a></li>
+          
+          <li><a th:href="@{#contact}">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Welcome To Placement Cell</h2>
+              <p>Empowering Dreams, Building Careers: Your Pathway to Success Begins Here.Connecting Talent with Opportunity: Explore Our Placement Cell's Services.Paving the Way to Professional Success: Meet Our Dedicated Placement Team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a>Home</a></li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+
+    <section   id="hero" class="sample-page">
+      <div class="container" data-aos="fade-up">
+
+        <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Add each image as a swiper-slide -->
+        <div class="swiper-slide">
+          <img th:src="@{/images/Aissmsioit.jpg}" alt="Image 1" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/PLacement.jpg}" alt="Image 2" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/ALACRITY-2K19-03.jpg}" alt="Image 2" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/Lab_advance-software.jpg}" alt="Image 2" class="center-image">
+        </div>
+        <!-- Add more images as needed -->
+      </div>
+
+      <!-- Add pagination and navigation buttons -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+         
+
+        <h2>
+          Welcome to the Placement Cell at AISSMS Institute of Information Technology (IOIT).
+         </h2>
+         <br>
+<h3>Our Mission</h3>
+<br>
+<p>At AISSMS IOIT, our primary mission is to empower our students and provide them with the tools they need to embark on successful careers. We understand that your journey from education to employment is a crucial phase, and we are here to guide you every step of the way.
+</p>
+<br>
+<h3>Our Commitment</h3>
+<br>
+<p>Career Excellence: We are committed to nurturing talent and ensuring that you have the skills and confidence to excel in your chosen field.
+Industry Connections: Our strong network of industry partners and recruiters enables us to connect you with the right opportunities.
+Personalized Guidance: We understand that each student is unique. That's why we offer personalized career counseling and guidance tailored to your aspirations.
+Skill Development: Our placement programs focus on enhancing your employability by offering training in areas such as resume building, interview preparation, and soft skills.
+Success Stories: Our success stories are a testament to the impact we've made on countless students who have gone on to achieve remarkable success in their careers.
+</p>
+<br>
+<h3>Why Choose AISSMS IOIT Placement Cell?</h3>
+<br>
+<p>When you choose AISSMS IOIT for your placement needs, you are choosing a team that is passionate about your success. We are not just preparing you for a job; we are preparing you for a fulfilling and rewarding career.
+
+Our commitment to excellence, industry connections, and personalized support sets us apart. Join us on this journey, and together, we will pave the way to a bright and prosperous future.
+</p>
+<br>
+<h3>Get Started</h3>
+<br>
+<p>Ready to take the first step toward a successful career? Explore our placement services, connect with our team, and let's start your journey to success today.
+
+At AISSMS IOIT, your success is our success. Join us and be part of our legacy of excellence in career development.
+        </p>
+
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <!-- Content for the About section goes here -->
+        <h2>About T & P</h2>
+        <br>
+        
+         <div class="row">
+      <div class="col-lg-6">
+        <!-- Add the path to your image in the "src" attribute -->
+        <img th:src="@{/images/kunani-sir-t-and-p.jpg}" alt="Person Image" class="img-fluid">  
+      </div>
+         <div class="col-lg-6">
+        <h4>Prof. Jitendra Khubani</h4>
+        <p>Training & Placement Officer AISSMS, IOIT, PUNE-411001.</p>
+        <h4>Phone: 020-26057983 extn: 2225, 2224</h4>
+        <h4>Mob: +91 7387 013 513</h4>
+        <h4>Email:</h4>
+        <p>placements@aissmsioit.org</p>
+      </div>
+      </div>
+      <br>
+        <p> The college has established a full fledged Training & Placement Department, to encompass various activities from shaping the students to meet the stringent requirements of the Industry, and to make them suitable to excel in the highly competitive business world. </p>
+        <br>
+        <p>The institute believes that every student who joins the institution deserves to get a potential earning opportunity. The main objective of T & P cell is to motivate and guide students to explore the domains of various career opportunities, entrepreneurship and enhance functional skills by providing industrial training,industry associated projects & enhance employability skills by honing aptitude skills, communication skills,GD & PI skills. The placement cell is dedicated to identify probable employers & conduct campus interviews. We also invite experts from industries to guide the students on latest technology, expectations from industries and different career options. T & P cell also acts as information source for opportunity in higher education and their qualifying examinations such as GATE, CAT, GRE etc.</p>
+        <br>
+        <p>Number of students placed in campus interviews is growing year by year. Many companies regularly visit institute for campus recruitment. Our students have been recruited by esteemed companies like:
+
+TCS, Oracle, Accenture, L & T, Wipro, SKF, Godrej, Tech Mahindra, , Emerson etc.
+</p>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+        <!-- Content for the Services section goes here -->
+        <p>Placement Statistics</p>
+        <h3>Placement Highlights</h3>
+        <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Add each image as a swiper-slide -->
+        <div class="swiper-slide">
+          <img th:src="@{/images/Highlight.jpeg}" alt="Image 1" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/Cisco.jpeg}" alt="Image 2" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/Veritas.jpeg}" alt="Image 3" class="center-image">
+        </div>
+         <div class="swiper-slide">
+          <img th:src="@{/images/Uptycs.jpeg}" alt="Image 4" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/Emerson.jpeg}" alt="Image 5" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/LTI.jpeg}" alt="Image 6" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/TATA.jpeg}" alt="Image 7" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/Betsol.jpeg}" alt="Image 8" class="center-image">
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/images/Zeus.jpeg}" alt="Image 9" class="center-image">
+        </div>
+        <!-- Add more images as needed -->
+      </div>
+
+      <!-- Add pagination and navigation buttons -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <h3>Year Wise Statistics</h3>
+      <br>
+     <h3><a th:href="@{/js/2021-2022.xlsx}" download="2021-2022.xlsx">2021-2022</a></h3>
+      <br>
+     <h3> <a th:href="@{/js/2020-2021.xlsx}" download="2020-2021.xlsx">2020-2021</a></h3>
+      <br>
+     <h3><a th:href="@{/js/2019-2020.xlsx}" download="2019-2020.xlsx">2019-2020</a></h3>
+      <br>
+     <h3> <a th:href="@{/js/2018-2019.xlsx}" download="2018-2019.xlsx">2018-2019</a></h3>
+      <br>
+     <h3><a th:href="@{/js/2017-2019.xlsx}" download="2017-2018.xlsx">2017-2018</a></h3>
+    </div>
+        
+      </div>
+    </section>
+    
+    
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+        <!-- Content for the Team section goes here -->
+        <div class="row">
+      <div class="col-lg-6">
+        <!-- Add the path to your image in the "src" attribute -->
+        <img th:src="@{/images/Tejasp.jpeg}" alt="Person Image" class="img-fluid" style="width:400px; height:400px;">  
+      </div>
+         <div class="col-lg-6">
+        <h4>Mr. Tejas Bose</h4>
+        <p>BE-IT Student at AISSMS, IOIT, PUNE-411001.</p>
+        <p>Java Springboot developer </p>
+        <h4>Phone: +919579193172</h4>
+        <h4>Mob: +919403427410</h4>
+        <h4>Email:</h4>
+        <p>tejasrbose@gmail.com</p>
+      </div>
+      </div>
+        
+      </div>
+    </section>
+    
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <!-- Content for the Team section goes here -->
+        <h3>Contact Us</h3>
+        <a th:href="@{https://www.linkedin.com/in/tejas-bose-331003285}" class="linkedin"><i class="bi bi-linkedin"></i>
+        <img th:src="@{/images/linkedin.png}" alt="LinkedIn Logo" style="width:60px; height:30px;">
+        </a>
+        
+      </div>
+    </section>
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a class="logo d-flex align-items-center">
+            <span>Easy Place</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a th:href="@{#}" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a th:href="@{#}" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a th:href="@{#}" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a th:href="@{#}" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a th:href="@{#}">Web Design</a></li>
+            <li><a th:href="@{#}">Web Development</a></li>
+            <li><a th:href="@{#}">Product Management</a></li>
+            <li><a th:href="@{#}">Marketing</a></li>
+            <li><a th:href="@{#}">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>
+           AISSMS IOIT Kennedy Corner ,Pune <br>
+            Near RTO, Pune 411021<br>
+            India <br><br>
+            <strong>Phone:</strong>+919579193172<br>
+            <strong>Email:</strong> tejasrbose@gmail.com<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Easy Place</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
+        Designed by <a th:href="@{https://bootstrapmade.com/}">Tejas & BootStrap</a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a th:href="@{#}" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/js/aos.js}"></script>
+  <script th:src="@{/js/glightbox.min.js}"></script>
+  <script th:src="@{/js/purecounter_vanilla.js}"></script>
+  <script th:src="@{/js/swiper-bundle.min.js}"></script>
+  <script th:src="@{/js/isotope.pkgd.min.js}"></script>
+  <script th:src="@{/js/validate.js}"></script>
+
+  <!-- Template Main JS File -->
+  <script th:src="@{/js/main.js}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+         body{/*
+            background-image: url(college.jpg);
+            background-size:200ch 100ch;
+            background-repeat:no-repeat ;*/
+            /* background-color: rgb(20, 131, 243); */
+        } 
+        #id01 {
+            display: inline-block;
+            background-color: rgb(216, 244, 230);
+            padding: 10px;
+            margin-left: 600px;
+            margin-top: 6px;
+            border-radius: 50px;
+            width: 500px;
+            /* box-shadow: 5px 10px 8px 10px #888888; */
+            box-shadow:  10px 20px 28px #888888;
+                }
+
+        #heading {
+            text-align: center;
+            font-size: xx-large;
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #loginpic {
+            margin: 24px 0 12px 0;
+            position: relative;
+            text-align: center;
+
+        }
+
+        #imgt {
+            border-radius: 50%;
+        }
+
+        #usernamepasswd {
+            padding: 16px;
+            font-size: x-large;
+        }
+
+        input {
+            margin-left: 70px;
+            width: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .loginka {
+            margin: 10px;
+            margin-left: 90px;
+            font-size: large;
+            font-size: 1.8ch;
+        }
+
+        .batuu {
+            margin-left: center;
+            width: 64%;
+            padding: 10px;
+            background-color: rgb(40, 192, 40);
+            border-radius: 10px;
+            border-style: solid;
+            border-color: rgb(20, 42, 20);
+        }
+
+        .batuu:hover {
+            background-color: rgb(23, 161, 23);
+        }
+
+        .pwd {
+            padding: 10px;
+
+            font-size: larger;
+        }
+
+        select {
+            width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            width: 65%;
+            margin-left: 95px;
+            background-color: rgb(10, 213, 10);
+            font-size: larger;
+        }
+
+        .header1{
+            border-radius: 50px 50px 10px 10px;
+            padding: 10px;
+            /* border: solid; */
+            border-bottom: 1px solid rebeccapurple;
+        }
+
+        .signup{
+            font-size: larger;
+            padding: 5px;
+            border-radius: 10px;
+            margin-left: 370px;
+            margin-top: 15px;
+            background-color:rgb(216, 244, 230);
+            /* box-shadow: 100cap; */
+            border: none;
+        }
+
+        .signup:hover{
+            background-color: aqua;
+            
+        }
+
+        
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            color: black;
+            font-weight: 300;
+            border-bottom: 1px solid rgb(18, 238, 99);
+        }
+        li{
+            float: left;
+            font-size: larger;
+        }
+        li a{
+            display: block;
+            text-align: center;
+            padding: 16px;
+            border-radius: 10px;
+            margin:10px 20px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active){
+            background-color: rgb(15, 164, 115);
+        }
+
+        li a.active{
+            color: rgb(7, 10, 14);
+            background-color: #04AA6D;
+        }
+
+        .regi{
+            color: black;
+        }
+

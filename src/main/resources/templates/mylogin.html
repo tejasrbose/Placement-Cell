@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- To use Thymeleaf Properties  -->
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link th:href="@{/css/mylog.css}" rel="stylesheet" id="bootstrap-css">
+	<link th:href="@{//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css}" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+
+	<div id="login">
+        <h3 class="text-center text-white pt-5">Login form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form th:action="@{/student/aunthinticatelogin}" method="post" th:object="${student}">
+                            <h3 class="text-center text-info">Login</h3>
+                            <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+                              <p class="text-center" th:text="${session.message.content}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="email" name="username"  th:value="${student.email}" required class="form-control" th:classappend="${#fields.hasErrors('email')?'is-invalid':''}">
+                                 <p th:each="e : ${#fields.errors('email')}" th:text="${e}">
+                                </p> 
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="password" class="form-control" required>
+                                <p th:each="e :${#fields.errors('password')}" th:text="${e}"> </p>
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                            <div id="register-link" class="text-right">
+                                <a href="#" class="text-info" th:href="@{/choose}">Register here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+</body>
+</html>

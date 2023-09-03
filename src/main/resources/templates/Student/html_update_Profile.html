@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/css_praticeNavbar.css}">
+    <link rel="stylesheet" th:href="@{/css/css_praticeNavbar1.css}">
+    <link rel="stylesheet" th:href="@{/css/css_createProfile.css}">
+    <style>
+        .option2 {
+            border-left: 10px solid #035b19af;
+            background-color: rgb(57, 186, 57);
+            color: white;
+            cursor: pointer;
+        }
+
+        .option2:hover {
+            border: 5px solid rgb(4, 126, 14);
+            background-color: rgb(16, 172, 16);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <div class="logosec">
+            <div class="logo">Aissms IOIT</div>
+            <img th:src="@{/images/aissms_logo.png}" height="120px" width="150px" class="icn menuicn" id="menuicn"
+                alt="menu-icon">
+        </div>
+
+        
+
+        <div class="message">
+            <div class="circle"></div>
+            <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png}" class="icn" alt="">
+           <div class="dp" th:object="${student}">
+         <a th:href="@{'/student/Myinfo'}"><img th:src="@{'/images/'+${student.img}}"  class="dpicn" alt="dp"></a>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="alert alert-success" role="alert">
+              This is a success alert—check it out!
+        </div>
+    
+
+    <div class="main-container">
+        <div class="navcontainer">
+                    <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png}"
+                            class="nav-img" alt="dashboard">
+                        <h3><a style="text-decoration: none; color:black;" th:href="@{/student/mydashboard}"> Dashboard</a>
+                        </h3>
+                    </div>
+
+                    <div class="option2 nav-option">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png}"
+                            class="nav-img" alt="articles">
+                        <h3> Update Profile</h3>
+                    </div>
+
+                    <div class="nav-option option3">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png}"
+                            class="nav-img" alt="report">
+                        <h3><a style="text-decoration: none; color:black;" th:href="@{/student/applyjob}">Apply Jobs</a>
+                        </h3>
+                    </div>
+
+                    <div class="nav-option option4">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
+                            class="nav-img" alt="institution">
+                        <h3> Remaining</h3>
+                    </div>
+
+                    <div class="nav-option option5">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png}"
+                            class="nav-img" alt="blog">
+                        <h3> Contact us</h3>
+                    </div>
+
+                    <div class="nav-option logout">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png}"
+                            class="nav-img" alt="logout">
+                        <h3><a style="text-decoration: none; color:black;" th:href="@{/logout}">Logout</a></h3>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <!-- Main containt starts  -->
+        <div class="content">
+
+            <form   th:action="@{/student/processprofile}"   method="post" th:object="${student}" enctype="multipart/form-data">
+                <div class="form-group row">
+                
+                <h1>Note : Refill All Empty feilds Whenever You Update Profile(Except Image , Resume) </h1>
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Upload Profile Photo</label>
+                  <div class="inputs" >
+                        <input type="file" th:value="${student.img}"  name="imges" class="form-control"  id="inputPassword3">
+                    </div>
+
+                    
+                    <div class=" form-group">
+                        <label for="name" class="inputs common" name="skills" > Name</label>
+                        <div class="inputs" >
+                            <input  th:value="${student.Name}" name="Name" type="text" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills" class="inputs common" th:value="${student.year}" >Select Year</label>
+                        <div class="inputs">
+                            <select name="year" class="inputs" id="year" required>
+                            <option class="inputs">Select Year</option>
+                                <option class="inputs" value="1" >BE</option>
+                                <option class="inputs" value="2">TE</option>
+                                <option class="inputs" value="3">SE</option>
+                                <option class="inputs" value="4">FE</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="branch" class="inputs" name="branch">Select branch</label>
+                        <div class="inputs">
+                            <select name="branch" class="inputs" id="branch" required style="width: 300px;">
+                                <option class="inputs" >Select Year</option>
+                                <option class="inputs" value="cs">Computer Science</option>
+                                <option class="inputs" value="it">Information Technology</option>
+                                <option class="inputs" value="aids">AIDS</option>
+                                <option class="inputs" value="e&ts">E&TC</option>
+                                <option class="inputs" value="electrical">Electrical</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cgpa" class="inputs" >Enter your current CGPA</label>
+                        <div class="inputs"><input th:value="${student.score}" name="score" type="number" placeholder="between 0-10">
+                        </div>
+                    </div>
+                        
+                         <div class="form-group">
+                        <label for="cgpa" class="inputs" >Contact</label>
+                        <div class="inputs"><input th:value="${student.contact}" name="contact" type="number">
+                        </div>
+                    </div>
+                    
+
+
+                    <div class="form-group">
+                        <label for="skills" class="inputs" >Skills</label>
+                        <div class="inputs"><input  name="skills" type="text" style="width:800px;" th:value="${student.skills}" required  placeholder="Enter Skills you have">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exp" class="">Projects</label>
+                        <div class="inputs"><textarea  name="exp" rows="5" th:value="${student.exp}" style="width:800px; font-size:larger; height:200px"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="desc" class="" >Description</label>
+                        <div class="inputs"><textarea  name="desc" rows="6" style="height: 240px; font-size: larger; width:800px;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                        <div class="inputs">
+                            <input type="email" th:value="${student.email}" class="form-control" id="inputEmail3" >
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group row">
+                        <label for="resume" class="inputs">Attach Resume</label>
+                        <div class="inputs">
+                            <input type="file" th:value="${student.resume}" class="inputs" id="resume" name="resumes" style="margin-left: 0px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group inputs">
+                        <div class="inputs" align="center" >
+                        <button type="submit" style="padding: 10px; font-size: larger;  border-radius: 10px;" class="btn btn-primary">Update</button>
+                        </div>
+                    </div>
+                    
+                   <div align="center" th:classappend="${'alert-'+session.message.type}" class="alert" th:if="${session.message}" role="alert">
+                          <span th:text="${session.message.content}"></span>
+                   </div>
+            </form>
+        </div>
+</body>
+
+</html>

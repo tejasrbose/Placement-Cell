@@ -1,0 +1,115 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.profile-header {
+    text-align: center;
+    background-color: #3498db;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    max-width: 150px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+   
+}
+
+.profile-image-round {
+    width: 200px; /* Set both width and height to the same value to create a square */
+    height: 200px; /* Set both width and height to the same value to create a square */
+    border-radius: 50%; /* This creates a circular shape */
+    margin-top: 1rem;
+    border: 4px solid #fff; /* Add a white border around the circular image */
+     object-fit:cover;
+}
+
+
+.profile-name {
+    margin: 0;
+    color: #fff;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.profile-subtitle {
+    margin-top: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.section-title {
+    color: #3498db;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.profile-info {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.profile-info li {
+    margin-bottom: 10px;
+}
+
+.profile-skills, .profile-projects {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.profile-skills li, .profile-projects li {
+    margin-bottom: 6px;
+}
+
+.profile-links {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.profile-links a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-links a:hover {
+    text-decoration: underline;
+}
+/* Add this to your styles.css */
+.resume-link {
+    margin-top: 20px;
+}
+
+.resume-link a {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.resume-link a:hover {
+    background-color: #2980b9;
+}

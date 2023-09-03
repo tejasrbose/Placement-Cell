@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/styles.css}"> <!-- Link to an external CSS file for better organization -->
+    <title>Student Profile</title>
+</head>
+<body>
+    <div class="container" th:object="${student}">
+        <div class="profile-header">
+            <img class="profile-image-round" th:src="@{'/images/'+${student.img}}" alt="Student Photograph">
+            <h1 class="profile-name"><a th:text="${student.Name}"></a></h1>
+            
+        </div>
+
+        <h2>Basic Information</h2>
+        <ul class="profile-info">
+            <li><strong>Email:</strong><a th:text="${student.email}"></a></li>
+            <li><strong>Contact:</strong><a th:text="${student.contact}"></a></li>
+            <li><strong>Current Year:</strong><a th:text="${student.year}"></a></li>
+        </ul>
+
+        <h2>Skills</h2>
+           <div class="profile-skills">
+          <a th:text="${student.skills}"></a>
+           </div>
+
+        <h2>Projects</h2>
+        <div class="profile-projects">
+             <a th:text="${student.exp}"></a>
+        </div>
+
+        <h2>Links</h2>
+        <div class="resume-link">
+    <a th:href="@{'/js/'+${student.resume}}" th:download="${student.Name}+.pdf">
+        Download Resume
+    </a>
+</div>
+        
+    </div>
+</body>
+</html>

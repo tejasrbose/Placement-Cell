@@ -1,0 +1,89 @@
+*{
+    /* background-image: url('registration_background.jpg');
+    background-repeat: no-repeat;
+    background-size: 2000px 2000px; */
+    background-color: rgb(216, 244, 230);
+} 
+
+.main{
+    margin: 0px;
+}
+.id01 {
+    box-sizing: border-box;
+    /* border-style: solid; */
+    display: inline-block;
+    padding: 10px;
+    font-size: larger;
+    /* color: rgb(42, 54, 165); */
+    margin: 50px;
+    width: 900px;
+    resize: vertical;
+}
+
+.head {
+    margin-left: 15px;
+}
+
+input {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: larger;
+}
+/* 
+input:hover {
+    border: solid rgb(12, 2, 2);
+} */
+
+select {
+    padding: 20px;
+    margin-top: 5px;
+    /* margin-left: 10px; */
+    display: inline-block;
+    border-radius: 7px;
+    width: 300px;
+}
+/* 
+select:hover {
+    border: solid rgb(12, 2, 2);
+} */
+
+label {
+    display: inline-block;
+    padding: 12px 12px 12px 0;
+    font-size: x-large;
+}
+
+.col-25 {
+    float: left;
+    width: 45%;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.col-75 {
+    /* float: left; */
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.madla {
+    font-size: larger;
+}
+
+:placeholder-shown {
+    font-size: large;
+}
+.batuu{
+    margin-top: 60px;
+    margin-left: 33px;
+    font-size: larger;
+    padding: 5px;
+    background-color:lightcyan;
+    border-radius: 10px;
+}
+.batuu:hover{
+    background-color: rgb(42, 172, 172);
+}

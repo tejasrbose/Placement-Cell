@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistration Form</title>
+     <link rel="stylesheet" href="" th:href="@{/css/css_registration.css}"></head> 
+
+<body>
+    <div class="main">
+    <div class="id01">
+   
+        <h2 class="head">Registration Form</h2>
+        <form th:action="@{/doregister}" method="post" th:object="${student}" >
+            <div class="row">
+                <div class="col-25">
+                    <label class="madla" for="fname">First Name</label>
+                </div>
+                <div class="col-75"><input  th:value="${student.fName}" name="fName" type="text" placeholder="Enter first name.."  required></div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label class="madla" for="lname">Last Name</label></div>
+                <div class="col-75"><input th:value="${student.lName}" name="lName" type="text" placeholder="Your last name.."  required></div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label class="madla" for="branch">Branch</label></div>
+                <div class="col-75">
+                    <select name="branch" class="madla" id="branch" required>
+                        <option class="madla" value="cs">Computer Science</option>
+                        <option class="madla" value="it">Information Technology</option>
+                        <option class="madla" value="aids">AIDS</option>
+                        <option class="madla" value="e&ts">E&TC</option>
+                        <option class="madla" value="electrical">Electrical</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label class="madla" for="year">Year</label></div>
+                <div class="col-75">
+                    <select class="madla"  id="Year" required name="year">
+                        <option class="madla" value="se">SE</option>
+                        <option class="madla" value="te">TE</option>
+                        <option class="madla" value="be">BE</option>
+                    </select>
+                </div>
+                
+   
+
+
+                <div class="row">
+                    <div class="col-25"><label for="email">Email</label></div>
+                    <div class="col-75">
+                        <input  th:value="${student.email}" type="email" name="email" placeholder="Your email" required>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label class="madla" for="pnumber">Contact no.</label></div>
+                <div class="col-75"><input name="contact" type="number" placeholder="mobile number" required></div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label  class="madla" for="pass1">Create a new Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" name="pass" placeholder="new password" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-75">
+                    <input type="password" name="pass1" placeholder="again enter password" required >
+                </div>
+            </div>
+    
+            <div class="row">
+                <button class="batuu" type="submit">Submit</button>
+            </div>
+            
+              </form>
+        </div>
+      
+    </div>  
+
+</body>
+
+</html>

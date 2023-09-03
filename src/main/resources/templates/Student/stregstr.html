@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Student Registration Form</title>
+    <style type="text/css">
+        th {
+            color: #FFF;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+        }
+        body {
+            background-color:#993333;
+            color:white;
+            font-family:verdana;
+        }
+        .buttons {
+            align-items: right;
+        }
+    </style>
+</head>
+<h1 align="center">STUDENT</h1>
+<body>
+<form th:action="@{/stprocess}" method="post" th:object="${student}">
+    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+        <p class="text-center" th:text="${session.message.content}"></p>
+    </div>
+    <table width="700" border="0" align="center" cellpadding="0" cellspacing="5">
+        <tr>
+            <th width="25%" height="60">&nbsp;</th>
+            <th><p>Student Registration Form</p></th>
+            <th width="10%">&nbsp;</th>
+        </tr>
+        <tr>
+            <td><strong>Name:</strong></td>
+            <td><input name="Name" th:value="${student.Name}" type="text" size="35" required/>
+                <p th:each="e : ${#fields.errors('Name')}" th:text="${e}">
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Sex:</strong></td>
+            <td><input type="radio" name="gender" value="male" required>Male
+                <input type="radio" name="gender" value="female">Female</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td><input name="email" th:value="${student.email}" type="email" size="35" required/>
+                <p th:each="e : ${#fields.errors('email')}" th:text="${e}">
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Create Password:</strong></td>
+            <td>
+                <input name="password" id="password" type="password" size="35" required/>
+                <span id="showPassword" style="cursor: pointer;">Show Password</span>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td align="right"><input type="reset" /></td>
+            <td><input type="submit" value="Submit"  onsubmit="alert('your details have been submitted!')"/></td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</form>
+<div class="buttons">
+    <a th:href="@{/mainpage}"><button>Main Page</button></a>
+</div>
+<script th:src="@{script.js}"></script>
+<script>
+    document.getElementById("showPassword").addEventListener("click", function() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            this.textContent = "Hide Password";
+        } else {
+            passwordField.type = "password";
+            this.textContent = "Show Password";
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Specification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background-image.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f39c12;
+      margin-top: 20px;
+    }
+
+    h2 {
+      color: #3498db;
+      margin-bottom: 20px;
+    }
+
+    .specification {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #f39c12;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div th:object="${jp}">
+    <h1><a th:text="${jp.recruiter.getWeb()}"></a></h1>
+  </div>
+  <h2>Job Specification</h2>
+  <div class="specification" th:object="${jp}">
+    <span class="label">Designation:</span> <a th:text="${jp.getDesgn()}"></a>
+  </div>
+
+  <div class="specification" th:object="${jp}">
+    <span class="label">Minimum Qualification:</span> <a th:text="${jp.getMinqauli()}"></a>
+  </div>
+
+  <div class="specification" th:object="${jp}">
+    <span class="label">Annual Package:</span> <a th:text="${jp.getPkg()}+LPA">LPA</a>
+  </div>
+
+  <div class="specification" th:object="${jp}">
+    <span class="label">Skills:</span>
+    <a th:text="${jp.getSkills()}"></a>
+  </div>
+</body>
+</html>

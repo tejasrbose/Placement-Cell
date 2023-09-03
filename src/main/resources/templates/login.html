@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T&P Login</title>
+    <link rel="stylesheet" th:href="@{/css/css_login.css}">
+</head>
+
+<body>
+
+    <div id="id01">
+        <!-- <div class="header1">
+        <button class="signup"><a href="html_registration form.html">Register</a></button>
+    </div> -->
+    <div class="navbar">
+        <ul>
+            <li><a class="active" href="#login">Login</a></li>
+            <!-- <li><a class="regi" href="#" th:href="@{/signup}" >Register</a></li> -->
+           <li> <a class="sign" href="#" th:href="@{/signin}">SignUp</a></li>
+        </ul>
+    </div>
+     
+        <form th:action="@{/profile}" method="post" th:object="${student}">
+            <!-- <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button> -->
+
+            <!-- <h2 id="heading">login</h2> -->
+            <div id="loginpic">
+                <img id="imgt" src="" th:src="@{images/loginpic.png}" alt="Not found" width="200px" height="200">
+            </div>
+            <select id="typeof" name="country">
+                <option value="stu">Student</option>
+                <option value="tp">Admin</option>
+                <option value="recru">Recruter</option>
+            </select>
+            <div id="usernamepasswd">
+                <label class="loginka" for="uname"><b>Username</b></label>
+                <input class="loginka"  type="text" placeholder=" Enter Username " name="uname" required>
+                <label class="loginka" for="psd"><b>Password</b></label>
+                <input class="loginka" type="password" placeholder=" Enter Passward " name="psd" required>
+                
+                <!-- You should do validation and then login  -->
+
+                <button class="batuu , loginka" type="submit">Login</button>
+
+                
+                <span class="pwd , loginka">Forget <a href="#">Password?</a></span>
+            </div>
+            <!-- <div id="id02"> this is sign up</div> -->
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/css_praticeNavbar.css}">
+    <link rel="stylesheet" th:href="@{/css/css_praticeNavbar1.css}">
+    <link rel="stylesheet" th:href="@{/css/css_createProfile.css}">
+    <style>
+        .option2 {
+            border-left: 10px solid #035b19af;
+            background-color: rgb(57, 186, 57);
+            color: white;
+            cursor: pointer;
+        }
+
+        .option2:hover {
+            border: 5px solid rgb(4, 126, 14);
+            background-color: rgb(16, 172, 16);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <div class="logosec">
+            <div class="logo">Aissms IOIT</div>
+            <img th:src="@{/images/aissms_logo.png}" height="120px" width="150px" class="icn menuicn" id="menuicn"
+                alt="menu-icon">
+        </div>
+
+        
+
+        <div class="message">
+            <div class="circle"></div>
+            <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png}" class="icn" alt="">
+            <div class="dp">
+                <img th:src="@{/images/loginpic.png}" class="dpicn" alt="dp">
+            </div>
+        </div>
+
+    </header>
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png}"
+                            class="nav-img" alt="dashboard">
+                        <h3><a style="text-decoration: none; color:black;" th:href="@{/recruiter/mydashboard}"> Dashboard</a>
+                        </h3>
+                    </div>
+
+                    <div class="option1 nav-option">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png}"
+                            class="nav-img" alt="articles">
+                        <h3><a style="text-decoration: none; color:black;" th:href="@{/recruiter/updateme}" >Update Profile</a></h3>
+                    </div>
+
+                   <div class="nav-option option3">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png}"
+                            class="nav-img" alt="report">
+                        <h3><a style="text-decoration: none; color:black;" th:href="@{'/recruiter/postjob'}">Job List</a>
+                        </h3>
+                    </div>
+
+                    <div class="nav-option option2">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png}"
+                            class="nav-img" alt="institution">
+                        <h3><a>Add Job Post</a></h3>
+                    </div>
+
+                    <div class="nav-option option5">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png}"
+                            class="nav-img" alt="blog">
+                        <h3> Contact us</h3>
+                    </div>
+
+                    <div class="nav-option logout">
+                        <img th:src="@{https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png}"
+                            class="nav-img" alt="logout">
+                        <h3><a style="text-decoration: none; color:black;" th:href="@{/logout}">Logout</a>
+                        </h3>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main containt starts  -->
+        <div class="content">
+            <form   th:action="@{/recruiter/makejob}" method="get">
+                <div class="form-group row">
+                   
+
+                    
+                    <div class=" form-group">
+                        <label for="name" class="inputs common" name="skills" >Designation</label>
+                        <div class="inputs" >
+                            <input   name="desgn" type="text" style="width:800px">
+                        </div>
+                    </div>
+                    
+
+                    
+                   
+
+                    <div class="form-group">
+                        <label for="cgpa" class="inputs" >Qualification Criteria in format(Current Year,Branch,CGPA,Experience)</label>
+                         <div class="inputs"><textarea  name="minqauli" rows="5" style="width:800px; font-size: larger; height:200px"></textarea>
+                        </div>
+                    </div>
+                    
+                      <div class="form-group">
+                        <label for="cgpa" class="inputs" >CTC(in LPA)</label>
+                        <div class="inputs"><input  name="pkg" type="number" style="width:800px" >
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="skills" class="inputs" >Skills Required</label>
+                         <div class="inputs"><textarea  name="skills" rows="5" style="width:800px; font-size: larger; height:200px"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skills" class="inputs" >Last Date of Application</label>
+                        <div class="inputs"><input  style="width:800px" name="skills" type="date"  required>
+                        </div>
+                    </div>
+
+           
+
+                    <div class="form-group">
+                        <label for="desc" class="inputs" >Roles And Responsibility</label>
+                        <div class="inputs"><textarea   name="desc" rows="3" style="height: 110px; font-size: larger; width: 800px;" placeholder="Enter Description in brief"></textarea>
+                        </div>
+                    </div>                                                     
+
+                    <div class="form-group inputs">
+                        <div class="inputs" align="center">
+                            <button type="submit" style="padding: 10px;  font-size: larger; width:200px; border-radius: 10px;" class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+</body>
+
+</html>

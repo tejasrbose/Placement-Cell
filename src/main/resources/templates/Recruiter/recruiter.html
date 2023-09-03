@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <h1 align="center">RECRUITER</h1>
+    <title>Recruiter Registration Form</title>
+    <style type="text/css">
+        th {
+            color: #FFF;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        body {
+            background-color: #993333;
+            color: white;
+            font-family: verdana;
+        }
+
+    </style>
+</head>
+
+<body>
+<form th:action="@{/reprocess}" method="post" th:object="${recruiter}">
+    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+        <p class="text-center" th:text="${session.message.content}"></p>
+    </div>
+    <table width="700" border="0" align="center" cellpadding="0" cellspacing="5">
+        <tr>
+            <th width="25%" height="60">&nbsp;</th>
+            <th><p>Recruiter Registration Form</p></th>
+            <th width="10%">&nbsp;</th>
+        </tr>
+
+        <tr>
+            <td><strong>Company Name:</strong></td>
+            <td><input name="companyname" th:value=${recruiter.companyname} type="text" size="35" required/></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Sex:</strong></td>
+            <td><input type="radio" name="gender" value="male" required>Male
+                <input type="radio" name="gender" value="female">Female</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td><input name="companyemail" th:value=${recruiter.companyemail} type="email" size="35" required/>
+                <p th:each="e : ${#fields.errors('companyemail')}" th:text="${e}">
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Create Password:</strong></td>
+            <td>
+                <input name="companypassword" id="passwordField" type="password" size="35" required/>
+                <span id="togglePassword" onclick="togglePasswordVisibility()">Show Password</span>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td><strong>Company ID number:</strong></td>
+            <td><input name="cid" type="number" size="35" required/></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Company Website: link</strong></td>
+            <td><input name="web" type="text" size="35" required/></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Location:City</strong></td>
+            <td><input name="city" type="text" size="35" required/></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><strong>Location:Address</strong></td>
+            <td><input name="addr" type="text" size="35" required/></td>
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td><strong>Mobile Number:</strong></td>
+            <td><input name="contact_no" type="number" size="35"/></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><input type="reset" /></td>
+            <td><input type="submit" value="Submit"  onsubmit= "alert('your details have been submitted!')"/></td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</form>
+<script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("passwordField");
+        var togglePassword = document.getElementById("togglePassword");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            togglePassword.textContent = "Hide Password";
+        } else {
+            passwordField.type = "password";
+            togglePassword.textContent = "Show Password";
+        }
+    }
+</script>
+</body>
+</html>
